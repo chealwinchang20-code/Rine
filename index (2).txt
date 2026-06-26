@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catherine | Assembly Specialist & Handicraft Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-dark: #B8860B;
+            --gold-light: #F4EBD0;
+            --off-white: #FCFAFA;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--off-white);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .text-gold { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #f9f6f0 100%);
+        }
+        
+        .gold-button {
+            background: linear-gradient(to right, #D4AF37, #B8860B);
+            transition: all 0.3s ease;
+        }
+        .gold-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(184, 134, 11, 0.2);
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            background: white;
+        }
+        .card-shadow:hover {
+            transform: translateY(-5px);
+        }
+
+        .logo-placeholder {
+            background: linear-gradient(45deg, #ffffff, #fcfaf2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--off-white); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gold/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-2xl serif font-bold tracking-widest text-gold">CATHERINE</span>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-medium">
+                <a href="#about" class="hover:text-gold transition-colors">About</a>
+                <a href="#expertise" class="hover:text-gold transition-colors">Expertise</a>
+                <a href="#skills" class="hover:text-gold transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-gold" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] flex flex-col items-center justify-center space-y-8 hidden">
+        <button class="absolute top-6 right-6 text-gold" onclick="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <a href="#about" class="text-2xl serif text-gold" onclick="toggleMenu()">About</a>
+        <a href="#expertise" class="text-2xl serif text-gold" onclick="toggleMenu()">Expertise</a>
+        <a href="#skills" class="text-2xl serif text-gold" onclick="toggleMenu()">Skills</a>
+        <a href="#contact" class="text-2xl serif text-gold" onclick="toggleMenu()">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20 hero-gradient relative px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-gold tracking-[0.3em] uppercase text-sm font-semibold mb-4">Precision Engineering & Craft</h2>
+                <h1 class="text-5xl md:text-7xl mb-6 leading-tight">Assembly Specialist & <span class="text-gold italic font-light">Artisan</span></h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
+                    Based in Taichung City, merging industrial discipline with meticulous manual finishing. Currently refining assembly excellence at Swan Chyan Group.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#expertise" class="gold-button text-white px-8 py-4 rounded-sm uppercase tracking-widest text-xs font-bold shadow-lg">Professional Experience</a>
+                    <a href="#contact" class="border border-gold text-gold px-8 py-4 rounded-sm uppercase tracking-widest text-xs font-bold hover:bg-gold hover:text-white transition-all">Get in Touch</a>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center">
+                <!-- Abstract Hero Logo -->
+                <div class="relative w-full max-w-md aspect-square flex items-center justify-center">
+                    <div class="absolute inset-0 border border-gold/20 rotate-45 transform"></div>
+                    <div class="absolute inset-4 border border-gold/10 -rotate-12 transform"></div>
+                    <svg viewBox="0 0 200 200" class="w-64 h-64 text-gold drop-shadow-xl">
+                        <path d="M100 20 L120 80 L180 80 L130 115 L150 175 L100 140 L50 175 L70 115 L20 80 L80 80 Z" fill="none" stroke="currentColor" stroke-width="1.5" />
+                        <circle cx="100" cy="100" r="75" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 4" />
+                        <text x="50%" y="54%" text-anchor="middle" font-family="Playfair Display" font-size="28" fill="currentColor">C</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Profile -->
+    <section id="about" class="py-24 bg-white px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl mb-12 uppercase tracking-widest text-gray-800">Professional Profile</h2>
+            <div class="h-1 w-20 bg-gold mx-auto mb-10"></div>
+            <p class="text-xl text-gray-600 leading-relaxed italic serif px-4">
+                "Dedicated and highly skilled Assembly Specialist with extensive experience at Swan Chyan Group. I combine industrial-grade efficiency with the meticulous eye of a Handicraft Expert, maintaining zero-defect rates through advanced manual dexterity and creative problem-solving."
+            </p>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-24 px-6 bg-[#fcfcfc]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-gold tracking-[0.2em] uppercase text-xs font-bold mb-2">Core Competencies</h2>
+                <h3 class="text-4xl font-light tracking-wide">Technical Excellence</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Industrial Assembly -->
+                <div class="p-10 card-shadow border border-gold/10">
+                    <div class="mb-6">
+                        <svg viewBox="0 0 24 24" class="h-10 w-10 text-gold" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-wider">Industrial Assembly</h4>
+                    <ul class="text-gray-500 space-y-3 text-sm leading-loose">
+                        <li>• Precision component fitting</li>
+                        <li>• Line optimization</li>
+                        <li>• Strict SOP adherence</li>
+                        <li>• High-speed accuracy</li>
+                    </ul>
+                </div>
+
+                <!-- Handicraft Mastery -->
+                <div class="p-10 card-shadow border border-gold/10">
+                    <div class="mb-6">
+                        <svg viewBox="0 0 24 24" class="h-10 w-10 text-gold" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-wider">Handicraft Mastery</h4>
+                    <ul class="text-gray-500 space-y-3 text-sm leading-loose">
+                        <li>• Elite fine motor skills</li>
+                        <li>• Finishing Specialist</li>
+                        <li>• Micro-defect identification</li>
+                        <li>• Artisanal precision</li>
+                    </ul>
+                </div>
+
+                <!-- IT & Strategy -->
+                <div class="p-10 card-shadow border border-gold/10">
+                    <div class="mb-6">
+                        <svg viewBox="0 0 24 24" class="h-10 w-10 text-gold" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-wider">Data & Strategy</h4>
+                    <ul class="text-gray-500 space-y-3 text-sm leading-loose">
+                        <li>• Information Tech Background</li>
+                        <li>• Measurement analysis</li>
+                        <li>• Tooling calibration</li>
+                        <li>• Problem solving</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Visualization -->
+    <section id="skills" class="py-24 bg-white px-6">
+        <div class="max-w-5xl mx-auto">
+            <h3 class="text-3xl text-center mb-16 uppercase tracking-widest">Key Strengths</h3>
+            <div class="grid md:grid-cols-2 gap-x-20 gap-y-10">
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-xs font-bold tracking-widest uppercase">Attention to Detail</span>
+                        <span class="text-xs text-gold">100%</span>
+                    </div>
+                    <div class="h-1 bg-gray-100 w-full">
+                        <div class="h-1 bg-gold w-full"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-xs font-bold tracking-widest uppercase">Work Discipline</span>
+                        <span class="text-xs text-gold">98%</span>
+                    </div>
+                    <div class="h-1 bg-gray-100 w-full">
+                        <div class="h-1 bg-gold w-[98%]"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-xs font-bold tracking-widest uppercase">Teamwork</span>
+                        <span class="text-xs text-gold">95%</span>
+                    </div>
+                    <div class="h-1 bg-gray-100 w-full">
+                        <div class="h-1 bg-gold w-[95%]"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-2">
+                        <span class="text-xs font-bold tracking-widest uppercase">Pressure Management</span>
+                        <span class="text-xs text-gold">92%</span>
+                    </div>
+                    <div class="h-1 bg-gray-100 w-full">
+                        <div class="h-1 bg-gold w-[92%]"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo/Abstract Showcase -->
+    <section class="py-24 bg-gold-light/20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="logo-placeholder aspect-square p-8">
+                    <svg viewBox="0 0 100 100" class="w-full text-gold/40">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="0.5" />
+                        <path d="M50 10 L50 90 M10 50 L90 50" stroke="currentColor" stroke-width="0.5" />
+                    </svg>
+                </div>
+                <div class="logo-placeholder aspect-square p-8">
+                    <svg viewBox="0 0 100 100" class="w-full text-gold/40">
+                        <rect x="25" y="25" width="50" height="50" fill="none" stroke="currentColor" stroke-width="0.5" />
+                        <path d="M10 10 L90 90 M90 10 L10 90" stroke="currentColor" stroke-width="0.5" />
+                    </svg>
+                </div>
+                <div class="logo-placeholder aspect-square p-8">
+                    <svg viewBox="0 0 100 100" class="w-full text-gold/40">
+                        <polygon points="50,15 90,85 10,85" fill="none" stroke="currentColor" stroke-width="0.5" />
+                        <circle cx="50" cy="60" r="15" fill="none" stroke="currentColor" stroke-width="0.5" />
+                    </svg>
+                </div>
+                <div class="logo-placeholder aspect-square p-8">
+                    <svg viewBox="0 0 100 100" class="w-full text-gold/40">
+                        <path d="M30 30 Q50 10 70 30 T70 70 T30 70 T30 30" fill="none" stroke="currentColor" stroke-width="0.5" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="border border-gold/20 shadow-xl overflow-hidden flex flex-col md:flex-row">
+                <div class="bg-gold p-12 text-white md:w-1/3">
+                    <h3 class="text-3xl serif mb-8">Contact</h3>
+                    <div class="space-y-8 text-sm tracking-wide">
+                        <div class="flex items-center space-x-4">
+                            <span>(886) 967044854</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span>Rinee.jk04@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4 uppercase tracking-[0.2em]">
+                            <span>Taichung City, Taiwan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-12 md:w-2/3 bg-white">
+                    <form onsubmit="return false" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 mb-2">Your Name</label>
+                            <input type="text" class="w-full border-b border-gray-100 py-3 focus:outline-none focus:border-gold transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 mb-2">Your Email</label>
+                            <input type="email" class="w-full border-b border-gray-100 py-3 focus:outline-none focus:border-gold transition-colors">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 mb-2">Message</label>
+                            <textarea rows="3" class="w-full border-b border-gray-100 py-3 focus:outline-none focus:border-gold transition-colors"></textarea>
+                        </div>
+                        <button class="md:col-span-2 gold-button text-white py-4 uppercase tracking-[0.3em] text-[10px] font-bold mt-4">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-white border-t border-gold/10 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <span class="text-2xl serif font-bold tracking-widest text-gold block mb-4">CATHERINE</span>
+            <p class="text-gray-400 text-[10px] uppercase tracking-[0.4em]">Handicraft Expert • Assembly Specialist</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
